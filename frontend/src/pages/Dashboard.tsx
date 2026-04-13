@@ -9,7 +9,8 @@ import {
   Map as MapIcon, 
   AlertCircle,
   Navigation,
-  Award
+  Award,
+  CheckCircle
 } from 'lucide-react';
 import { io, Socket } from 'socket.io-client';
 import api from '../services/api';
@@ -28,8 +29,9 @@ const Dashboard: React.FC = () => {
     const savedUser = localStorage.getItem('user');
     if (savedUser) setUser(JSON.parse(savedUser));
 
-    // Conectar Socket - Usando la IP directa del backend
-    socketRef.current = io('http://127.0.0.1:3000');
+    // Conectar Socket - Usamos la URL de la API pero sin el sufijo /api
+    const socketUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:3000';
+    socketRef.current = io(socketUrl);
 
     socketRef.current.on('connect', () => {
       console.log('Socket conectado');
