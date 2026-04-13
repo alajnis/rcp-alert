@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-emergency: #E53E3E;
+  --color-success: #38A169;
+  --color-secondary: #718096;
+  --color-info: #3182CE;
+  --color-dark: #1A202C;
+
+  --animate-pulse-fast: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f7fafc;
+  color: #1A202C;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer components {
+  .btn-emergency {
+    @apply bg-emergency text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition active:scale-95;
+  }
+
+  .card-status {
+    @apply bg-white p-4 rounded-xl shadow-md border border-gray-100;
+  }
+}

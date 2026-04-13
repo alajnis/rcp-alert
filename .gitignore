@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.env
+.env.*
+rcp_alert.db
+rcp_alert.db-journal
+backend/rcp_alert.db
+backend/rcp_alert.db-journal
+backend/.env
+frontend/node_modules
+backend/node_modules
